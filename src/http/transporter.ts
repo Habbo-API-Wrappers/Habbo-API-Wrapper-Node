@@ -1,6 +1,6 @@
 import { HabboApiException } from '../exceptions/habboApiException';
 import { parseXml, XmlParseError } from '../util/xmlParser';
-import { JSONParse } from 'json-with-bigint';
+import { JSONParse, JSONStringify } from 'json-with-bigint';
 
 /**
  * The `User-Agent` sent with every request.
@@ -137,7 +137,7 @@ export class Transporter {
     const hasBody = body !== undefined && body !== null && !(typeof body === 'object' && Object.keys(body as object).length === 0);
     if (hasBody) {
       try {
-        init.body = JSON.stringify(body);
+        init.body = JSONStringify(body);
       } catch (error) {
         throw new HabboApiException(
           `Failed to encode JSON request body: ${(error as Error).message}`,
