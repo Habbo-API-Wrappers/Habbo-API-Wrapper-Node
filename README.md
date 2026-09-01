@@ -1,11 +1,11 @@
-# wired-api-typescript
+# wired-api-wrapper-node
 
 A lightweight TypeScript wrapper for the Habbo public API and WIRED variable endpoints.
 
 ## Installation
 
 ```bash
-npm install wired-api-typescript
+npm install wired-api-wrapper-node
 ```
 
 Requires Node.js >= 18 (for the built-in global `fetch`). There are no runtime dependencies.
@@ -17,7 +17,7 @@ Requires Node.js >= 18 (for the built-in global `fetch`). There are no runtime d
 Import the primary API class and your desired hotel configuration:
 
 ```typescript
-import { HabboPublicAPI, Hotel } from 'wired-api-typescript';
+import { HabboPublicAPI, Hotel } from 'wired-api-wrapper-node';
 
 // Create an instance targeting the .COM hotel
 const api = HabboPublicAPI.fromHotel(Hotel.COM);
