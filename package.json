@@ -1,0 +1,42 @@
+{
+  "name": "wired-api-wrapper-node",
+  "version": "1.0.0",
+  "description": "A lightweight TypeScript wrapper for Habbo's public API and WIRED variable endpoints.",
+  "keywords": [
+    "habbo",
+    "api",
+    "wrapper",
+    "wired",
+    "typescript"
+  ],
+  "author": "WiredSpast",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habbo-API-Wrappers/Wired-API-Wrapper-Node.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.4"
+  }
+}
