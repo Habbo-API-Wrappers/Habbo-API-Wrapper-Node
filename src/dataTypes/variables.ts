@@ -6,7 +6,7 @@
 /** A variable assignment's data. */
 export interface VariableResult {
   /** The value of the variable */
-  value: number;
+  value: bigint;
   /** The creation time of the variable */
   creationTime: string;
   /** The update time of the variable */

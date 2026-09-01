@@ -1,6 +1,6 @@
 {
   "name": "wired-api-wrapper-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight TypeScript wrapper for Habbo's public API and WIRED variable endpoints.",
   "keywords": [
     "habbo",
@@ -38,5 +38,8 @@
   "devDependencies": {
     "@types/node": "^20.14.0",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "json-with-bigint": "^3.5.12"
   }
 }

@@ -1,5 +1,6 @@
 import { HabboApiException } from '../exceptions/habboApiException';
 import { parseXml, XmlParseError } from '../util/xmlParser';
+import { JSONParse } from 'json-with-bigint';
 
 /**
  * The `User-Agent` sent with every request.
@@ -175,7 +176,7 @@ export class Transporter {
     const jsonBody = body.length === 0 ? '{}' : body;
 
     try {
-      return JSON.parse(jsonBody) as T;
+      return JSONParse(jsonBody) as T;
     } catch (error) {
       throw new HabboApiException(
         `Failed to parse JSON response: ${(error as Error).message}`,
