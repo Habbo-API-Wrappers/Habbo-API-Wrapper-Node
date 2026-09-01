@@ -36,7 +36,7 @@ export class GlobalVariablesResource extends AbstractVariablesResource {
    *
    * @throws HabboApiException If the API throws an error or exception
    */
-  async changeVariable(varName: string, value: number): Promise<VariableResult> {
+  async changeVariable(varName: string, value: bigint): Promise<VariableResult> {
     const data = await this.transporter.patch(`/api/public/rooms/${this.roomId}/variables/global/${varName}`, {
       value,
     });

@@ -15,7 +15,7 @@ export interface VariableResult {
 
 export function parseVariableResult(data: any): VariableResult {
   return {
-    value: data.value,
+    value: BigInt(data.value),
     creationTime: data.creation_time,
     updateTime: data.update_time,
   };

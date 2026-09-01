@@ -9,7 +9,7 @@ import { FurniVariableProfileResult, parseFurniVariableProfileResult } from '../
  * to a single furni at once.
  */
 export class FurniProfileRequestBuilder extends AbstractVariablesResource {
-  private readonly variables: Record<string, number | null> = {};
+  private readonly variables: Record<string, bigint | null> = {};
 
   /**
    * @param targetKind The target kind (furni / wall item / BC furni / BC wall item)
@@ -30,9 +30,9 @@ export class FurniProfileRequestBuilder extends AbstractVariablesResource {
    * Change the value of a variable assignment or give a variable assignment.
    *
    * @param variableName The name of the variable
-   * @param value The value you want to assign to the variable (defaults to -1)
+   * @param value The value you want to assign to the variable (defaults to -1n)
    */
-  changeOrGiveVariable(variableName: string, value: number = -1): this {
+  changeOrGiveVariable(variableName: string, value: bigint = -1n): this {
     this.variables[variableName] = value;
     return this;
   }

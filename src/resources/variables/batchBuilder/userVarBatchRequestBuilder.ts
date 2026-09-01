@@ -7,7 +7,7 @@ interface BatchRequestEntry {
   op_id: string;
   method: 'GET' | 'PUT' | 'PATCH' | 'DELETE';
   path: string;
-  body?: { value: number };
+  body?: { value: bigint };
 }
 
 /**
@@ -51,9 +51,9 @@ export class UserVarBatchRequestBuilder extends AbstractVariablesResource {
    * @param opId The self-defined operation ID, use this same ID to find the response to this operation
    * @param targetKind The target kind (user / pet / bot)
    * @param entityId The ID of the user, pet or bot
-   * @param value The value to assign to the variable (defaults to -1)
+   * @param value The value to assign to the variable (defaults to -1n)
    */
-  giveVariable(opId: string, targetKind: UserTargetKind, entityId: number, value: number = -1): this {
+  giveVariable(opId: string, targetKind: UserTargetKind, entityId: number, value: bigint = -1n): this {
     this.requests.push({
       op_id: opId,
       method: 'PUT',
@@ -71,7 +71,7 @@ export class UserVarBatchRequestBuilder extends AbstractVariablesResource {
    * @param entityId The ID of the user, pet or bot
    * @param value The value to assign to the variable
    */
-  changeVariable(opId: string, targetKind: UserTargetKind, entityId: number, value: number): this {
+  changeVariable(opId: string, targetKind: UserTargetKind, entityId: number, value: bigint): this {
     this.requests.push({
       op_id: opId,
       method: 'PATCH',

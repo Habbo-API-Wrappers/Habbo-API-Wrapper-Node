@@ -7,7 +7,7 @@ import { GlobalVariableProfileResult, parseGlobalVariableProfileResult } from '.
  * once.
  */
 export class GlobalProfileRequestBuilder extends AbstractVariablesResource {
-  private readonly variables: Record<string, number> = {};
+  private readonly variables: Record<string, bigint> = {};
 
   /**
    * @param roomId The ID of the room
@@ -23,7 +23,7 @@ export class GlobalProfileRequestBuilder extends AbstractVariablesResource {
    * @param variableName The name of the variable
    * @param value The value you want to assign to the variable
    */
-  changeVariable(variableName: string, value: number): this {
+  changeVariable(variableName: string, value: bigint): this {
     this.variables[variableName] = value;
     return this;
   }

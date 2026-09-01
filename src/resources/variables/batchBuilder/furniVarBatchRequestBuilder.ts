@@ -8,7 +8,7 @@ interface BatchRequestEntry {
   op_id: string;
   method: 'GET' | 'PUT' | 'PATCH' | 'DELETE';
   path: string;
-  body?: { value: number };
+  body?: { value: bigint };
 }
 
 /**
@@ -53,9 +53,9 @@ export class FurniVarBatchRequestBuilder extends AbstractVariablesResource {
    * @param opId The self-defined operation ID, use this same ID to find the response to this operation
    * @param targetKind The target kind (furni / wall item / BC furni / BC wall item)
    * @param furniId The ID of the furni
-   * @param value The value to assign to the variable (defaults to -1)
+   * @param value The value to assign to the variable (defaults to -1n)
    */
-  giveVariable(opId: string, targetKind: FurniTargetKind, furniId: number, value: number = -1): this {
+  giveVariable(opId: string, targetKind: FurniTargetKind, furniId: number, value: bigint = -1n): this {
     const sanitisedId = sanitiseFurniId(furniId);
     this.requests.push({
       op_id: opId,
@@ -74,7 +74,7 @@ export class FurniVarBatchRequestBuilder extends AbstractVariablesResource {
    * @param furniId The ID of the furni
    * @param value The value to assign to the variable
    */
-  changeVariable(opId: string, targetKind: FurniTargetKind, furniId: number, value: number): this {
+  changeVariable(opId: string, targetKind: FurniTargetKind, furniId: number, value: bigint): this {
     const sanitisedId = sanitiseFurniId(furniId);
     this.requests.push({
       op_id: opId,

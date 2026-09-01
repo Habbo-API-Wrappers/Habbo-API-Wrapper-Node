@@ -58,7 +58,7 @@ export class FurniVariablesResource extends AbstractVariablesResource {
     variableName: string,
     targetKind: FurniTargetKind,
     furniId: number,
-    value: number = -1
+    value: bigint = -1n
   ): Promise<VariableResult> {
     const id = sanitiseFurniId(furniId);
     const data = await this.transporter.put(
@@ -84,7 +84,7 @@ export class FurniVariablesResource extends AbstractVariablesResource {
     variableName: string,
     targetKind: FurniTargetKind,
     furniId: number,
-    value: number
+    value: bigint
   ): Promise<VariableResult> {
     const id = sanitiseFurniId(furniId);
     const data = await this.transporter.put(

@@ -56,7 +56,7 @@ export class UserVariablesResource extends AbstractVariablesResource {
     variableName: string,
     targetKind: UserTargetKind,
     entityId: number,
-    value: number = -1
+    value: bigint = -1n
   ): Promise<VariableResult> {
     const data = await this.transporter.put(
       `/api/public/rooms/${this.roomId}/variables/user/${variableName}/${userTargetKindKey(targetKind)}/${entityId}`,
@@ -81,7 +81,7 @@ export class UserVariablesResource extends AbstractVariablesResource {
     variableName: string,
     targetKind: UserTargetKind,
     entityId: number,
-    value: number
+    value: bigint
   ): Promise<VariableResult> {
     const data = await this.transporter.put(
       `/api/public/rooms/${this.roomId}/variables/user/${variableName}/${userTargetKindKey(targetKind)}/${entityId}`,
